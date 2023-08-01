@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const YOUR_DOMAIN = 'http://https://enthusiastic-tan-sunbonnet.cyclic.app:3000';
+const YOUR_DOMAIN = 'http://enthusiastic-tan-sunbonnet.cyclic.app:3000';
 
 let unitAomount = 500;
 app.post('/create-checkout-session', async (req, res) => {

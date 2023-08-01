@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-// const YOUR_DOMAIN = 'https://elegant-life-jacket-fish.cyclic.app:3000';
+const YOUR_DOMAIN = 'https://elegant-life-jacket-fish.cyclic.app:3000';
 
 let unitAomount = 500;
 app.post('/create-checkout-session', async (req, res) => {
@@ -29,8 +29,8 @@ app.post('/create-checkout-session', async (req, res) => {
 
     // unitAmount = session.line_items[0].price_data.unit_amount; // Assign value to the global variable
     mode: 'payment',
-    success_url: `/success`,
-    cancel_url: `/cancel.html`,
+    success_url: `${YOUR_DOMAIN}/success`,
+    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
   });
 
   res.redirect(303, session.url);

@@ -28,8 +28,8 @@ app.post('/create-checkout-session', async (req, res) => {
 
     // unitAmount = session.line_items[0].price_data.unit_amount; // Assign value to the global variable
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}/success`,
-    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+    success_url: `/success`,
+    cancel_url: `/cancel.html`,
   });
 
   res.redirect(303, session.url);

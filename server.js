@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 });
 app.get('/mypay', (req, res) => {
   unitAomount = parseInt(req.param.data);
-  console.log('final pay:', unitAmount);
+  console.log(req.query.data);
   var data = { price: unitAmount };
   // Get the absolute path of the HTML file
   const htmlPath = path.join(__dirname, 'checkout.html');

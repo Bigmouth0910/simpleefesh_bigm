@@ -33,7 +33,7 @@ app.post('/create-checkout-session', async (req, res) => {
     cancel_url: `/cancel.html`,
   });
 
-  // res.redirect(303, session.url);
+  res.redirect(303, session.url);
 });
 
 app.get("/", (req, res) => {

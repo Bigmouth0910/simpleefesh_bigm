@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 
 const YOUR_DOMAIN = 'https://elegant-life-jacket-fish.cyclic.app:3000';
 
-let unitAomount = 500;
+let unitAmount = 500;
 app.post('/create-checkout-session', async (req, res) => {
   // res.send("Hello world");
   const session = await stripe.checkout.sessions.create({
@@ -22,7 +22,7 @@ app.post('/create-checkout-session', async (req, res) => {
       product_data: {
         name: 'T-shirt',
       },
-      unit_amount: 2000,
+      unit_amount: unitAmount,
     },
     quantity: 1,
   }],
@@ -40,9 +40,9 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 app.get('/mypay', (req, res) => {
-  // unitAomount = req.query.data;
-  console.log('Arsalan made payment unitAmount:', unitAomount);
-  var data = { price: unitAomount };
+  // unitAmount = req.query.data;
+  console.log('Arsalan made payment unitAmount:', unitAmount);
+  var data = { price: unitAmount };
   // Get the absolute path of the HTML file
   const htmlPath = path.join(__dirname, 'checkout.html');
 
@@ -53,7 +53,7 @@ app.get('/mypay', (req, res) => {
 
 app.get('/success', (req, res) => {
   // Get the absolute path of the HTML file    
-  var data = { price: unitAomount };
+  var data = { price: unitAmount };
   // Send the HTML file as a response
   res.render('success_new', { price: data.price });
 

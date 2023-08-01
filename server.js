@@ -13,21 +13,19 @@ app.set('view engine', 'ejs');
 let unitAomount = 500;
 app.post('/create-checkout-session', async (req, res) => {
   // res.send("Hello world");
-  const session = await stripe.checkout.sessions.create({
-    line_items: [{
-      price_data: {
-        // The currency parameter determines which
-        // payment methods are used in the Checkout Session.
-        currency: 'eur',
-        product_data: {
-          name: 'TTT',
-        },
-        unit_amount: unitAomount,
+  payment_method_types: ['card'],
+  line_items: [{
+    price_data: {
+      // The currency parameter determines which
+      // payment methods are used in the Checkout Session.
+      currency: 'eur',
+      product_data: {
+        name: 'T-shirt',
       },
-      quantity: 1,
-    }],
-
-    // unitAmount = session.line_items[0].price_data.unit_amount; // Assign value to the global variable
+      unit_amount: 2000,
+    },
+    quantity: 1,
+  }],
     mode: 'payment',
     success_url: `/success`,
     // cancel_url: `/cancel.html`,

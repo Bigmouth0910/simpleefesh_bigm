@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const YOUR_DOMAIN = 'https://elegant-life-jacket-fish.cyclic.app';
+const YOUR_DOMAIN = 'https://sangria-catfish-hem.cyclic.app';
 
 let unitAmount;
 app.post('/create-checkout-session', async (req, res) => {

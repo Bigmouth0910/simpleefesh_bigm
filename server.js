@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 
 const YOUR_DOMAIN = 'https://elegant-life-jacket-fish.cyclic.app';
 
-let unitAmount = 500;
+let unitAmount;
 app.post('/create-checkout-session', async (req, res) => {
   // res.send("Hello world");
   const session = await stripe.checkout.sessions.create({
@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 });
 app.get('/mypay', (req, res) => {
   unitAomount = req.query.data;
-  console.log('Arsalan made payment unitAmount:', unitAmount);
+  console.log('payment connnected to flutter:', unitAmount);
   var data = { price: unitAmount };
   // Get the absolute path of the HTML file
   const htmlPath = path.join(__dirname, 'checkout.html');

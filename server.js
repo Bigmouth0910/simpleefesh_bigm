@@ -19,7 +19,7 @@ app.post('/create-checkout-session', async (req, res) => {
         // payment methods are used in the Checkout Session.
         currency: 'eur',
         product_data: {
-          name: 'TTTTT',
+          name: 'Mango',
         },
         unit_amount: unitAomount,
       },

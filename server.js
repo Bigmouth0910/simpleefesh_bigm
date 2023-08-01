@@ -14,7 +14,6 @@ let unitAomount = 500;
 app.post('/create-checkout-session', async (req, res) => {
   // res.send("Hello world");
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card'],
   line_items: [{
     price_data: {
       // The currency parameter determines which

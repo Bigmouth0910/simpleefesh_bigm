@@ -18,7 +18,7 @@ app.post('/create-checkout-session', async (req, res) => {
     price_data: {
       // The currency parameter determines which
       // payment methods are used in the Checkout Session.
-      currency: 'USD',
+      currency: 'eur',
       product_data: {
         name: 'T-shirt',
       },

@@ -22,7 +22,7 @@ app.post('/create-checkout-session', async (req, res) => {
       product_data: {
         name: 'T-shirt',
       },
-      unit_amount: unitAmount,
+      unit_amount: unitAmount/100,
     },
     quantity: 1,
   }],

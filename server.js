@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 let unitAomount = 500;
 app.post('/create-checkout-session', async (req, res) => {
-  res.send("Hello world");
+  // res.send("Hello world");
   const session = await stripe.checkout.sessions.create({
     line_items: [{
       price_data: {

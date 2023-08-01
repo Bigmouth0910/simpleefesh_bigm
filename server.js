@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const YOUR_DOMAIN = 'http://enthusiastic-tan-sunbonnet.cyclic.app:4242';
+const YOUR_DOMAIN = 'http://enthusiastic-tan-sunbonnet.cyclic.app:3000';
 
 let unitAomount = 500;
 app.post('/create-checkout-session', async (req, res) => {
@@ -58,4 +58,4 @@ app.get('/success', (req, res) => {
 
 });
 
-app.listen(3000, () => console.log('Running on port 4242'));
+app.listen(3000, () => console.log('Running on port 3000'));

@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const YOUR_DOMAIN = 'http://192.168.135.65:80';
+const YOUR_DOMAIN = 'http://192.168.135.65:3000';
 
 let unitAomount = 500;
 app.post('/create-checkout-session', async (req, res) => {

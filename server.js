@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 app.get('/mypay', (req, res) => {
-  unitAomount = parseInt(req.query.data);
+  unitAomount = parseInt(req.param.data);
   console.log('final pay:', unitAmount);
   var data = { price: unitAmount };
   // Get the absolute path of the HTML file

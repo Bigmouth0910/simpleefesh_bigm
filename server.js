@@ -22,7 +22,7 @@ app.post('/create-checkout-session', async (req, res) => {
       product_data: {
         name: 'T-shirt',
       },
-      unit_amount: unitAmount*100,
+      unit_amount: unitAmount,
     },
     quantity: 1,
   }],
@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 app.get('/mypay', (req, res) => {
-  unitAmount = parseInt(req.query.data);
+  unitAmount = parseInt(req.query.data)*100;
   console.log(unitAmount);
   var data = { price: unitAmount };
   // Get the absolute path of the HTML file

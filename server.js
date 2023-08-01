@@ -35,6 +35,9 @@ app.post('/create-checkout-session', async (req, res) => {
   res.redirect(303, session.url);
 });
 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
 app.get('/mypay', (req, res) => {
   // unitAomount = req.query.data;
   console.log('Arsalan made payment unitAmount:', unitAomount);

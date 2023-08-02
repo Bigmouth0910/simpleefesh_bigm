@@ -14,7 +14,7 @@
     <section class="hero-section">
         <div class="hero-content">
             <p style="margin-bottom: 0vw;font-size: 200px;color: aliceblue;font-size:10vw;">Success!</p>
-            <p class="btn" style="margin-top: -9vw;">Close this window to go back!</p>
+            <p class="btn" style="margin-top: -9vw;" onclick="closeWindow()">Close this window to go back!</p>
         </div>
     </section>
 
@@ -47,6 +47,11 @@
     <!-- Footer partial -->
 
     <script src="/js/script.js"></script>
+<script>
+      function closeWindow() {
+        window.close();
+      }
+    </script>
 </body>
 
 </html>

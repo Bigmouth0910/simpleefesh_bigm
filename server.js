@@ -11,8 +11,10 @@ app.set('view engine', 'ejs');
 const YOUR_DOMAIN = 'https://sangria-catfish-hem.cyclic.app';
 
 let unitAmount;
-app.post('/create-checkout-session', async (req, res) => {
+app.get('/create-checkout-session', async (req, res) => {
   // res.send("Hello world");
+  unitAmount = parseInt(req.query.data*100);
+  console.log(unitAmount);
   const session = await stripe.checkout.sessions.create({
   line_items: [{
     price_data: {
@@ -41,7 +43,6 @@ app.get("/", (req, res) => {
 });
 app.get('/mypay', (req, res) => {
   unitAmount = parseInt(req.query.data*100);
-  console.log(unitAmount);
   var data = { price: unitAmount };
   // Get the absolute path of the HTML file
   const htmlPath = path.join(__dirname, 'checkout.html');

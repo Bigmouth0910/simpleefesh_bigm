@@ -13,7 +13,7 @@ const YOUR_DOMAIN = 'https://sangria-catfish-hem.cyclic.app';
 let unitAmount;
 app.get('/create-checkout-session', async (req, res) => {
   // res.send("Hello world");
-  unitAmount = parseInt(req.query.data*100);
+  unitAmount = parseInt(req.query.data);
   console.log(unitAmount);
   const session = await stripe.checkout.sessions.create({
   line_items: [{

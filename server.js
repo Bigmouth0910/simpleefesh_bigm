@@ -111,9 +111,8 @@ app.get('/success', (req, res) => {
     <script src="/js/script.js"></script>
     <script>
       function closeWindow() {
-        //const popup = window.open('', '_self');
-        //popup.close();
-	window.close();
+        const popup = window.open('', '_self');
+        popup.close();
       }
     </script>
 </body>

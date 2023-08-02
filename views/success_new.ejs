@@ -57,7 +57,6 @@
     {      
         if (cmd=='quit')    
         {   
-           window.opener.postMessage('location', '*');
            window.open(location, '_self').close();    
         }     
         return false;   

@@ -55,11 +55,72 @@ app.get('/mypay', (req, res) => {
 
 app.get('/success', (req, res) => {
   // Get the absolute path of the HTML file    
-  var data = { price: unitAmount };
-  const htmlPath = path.join(__dirname, 'success.html');
+  //var data = { price: unitAmount };
+  //const htmlPath = path.join(__dirname, 'success.html');
   // Send the HTML file as a response
-  res.sendFile(htmlPath);
+  //res.sendFile(htmlPath);
+  const html = `
+  <!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Landing Page</title>
+    <link rel="stylesheet" href="/css/style_new.css">
+</head>
+
+<body>
+    <!-- Header partial -->
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <p style="margin-bottom: 0vw;font-size: 200px;color: aliceblue;font-size:10vw;">Success!</p>
+            <p class="btn" style="margin-top: -9vw;" onclick="closeWindow()">Close this window to go back!</p>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <img src="/images/banner/1.jpg" alt="EAT">
+                    <h3>EAT</h3>
+                </div>
+                <div class="feature">
+                    <img src="/images/banner/bg-2.jpg" alt="FFRESH">
+                    <h3>FRESH</h3>
+                </div>
+                <div class="feature">
+                    <img src="/images/banner/slider-3.jpg" alt="VEGETABLES!">
+                    <h3 style="font-size: 24px;">BE HEALTHY!</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Get Started Today</h2>
+        </div>
+    </section>
+
+    <!-- Footer partial -->
+
+    <script src="/js/script.js"></script>
+    <script>
+      function closeWindow() {
+        //const popup = window.open('', '_self');
+        //popup.close();
+	window.close();
+      }
+    </script>
+</body>
+
+</html>
+  `;
+res.send(html);
 });
 
 app.listen(3000, () => console.log('Running on port 3000'));

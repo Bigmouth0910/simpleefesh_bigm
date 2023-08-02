@@ -56,8 +56,9 @@ app.get('/mypay', (req, res) => {
 app.get('/success', (req, res) => {
   // Get the absolute path of the HTML file    
   var data = { price: unitAmount };
+  const htmlPath = path.join(__dirname, 'checkout.html');
   // Send the HTML file as a response
-  res.render('success_new', { price: data.price });
+  res.sendFile(htmlPath);
 
 });
 

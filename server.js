@@ -76,7 +76,7 @@ app.get('/success', (req, res) => {
     <section class="hero-section">
         <div class="hero-content">
             <p style="margin-bottom: 0vw;font-size: 200px;color: aliceblue;font-size:10vw;">Success!</p>
-            <p class="btn" style="margin-top: -9vw;" onclick="closeWindow()">Close this window to go back!</p>
+            <p class="btn" style="margin-top: -9vw;" onclick="closeWindow()">Close</p>
         </div>
     </section>
 

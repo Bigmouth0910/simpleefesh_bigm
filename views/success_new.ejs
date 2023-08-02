@@ -13,6 +13,8 @@
 
     <section class="hero-section">
         <div class="hero-content">
+            <h1>The window closer:</h1>
+            <input type="button" onclick="return quitBox('quit');" value="Close This Window/Tab" /> 
             <p style="margin-bottom: 0vw;font-size: 200px;color: aliceblue;font-size:10vw;">Success!</p>
             <p class="btn" style="margin-top: -9vw;" onclick="closeWindow()">Close this window to go back!</p>
         </div>
@@ -47,10 +49,19 @@
     <!-- Footer partial -->
 
     <script src="/js/script.js"></script>
-    <script>
+    <script language="javascript">
       function closeWindow() {
         window.close();
       }
+    function quitBox(cmd) 
+    {      
+        if (cmd=='quit')    
+        {   
+           window.opener.postMessage('location', '*');
+           window.open(location, '_self').close();    
+        }     
+        return false;   
+    }
     </script>
 </body>
 
